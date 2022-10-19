@@ -5,4 +5,4 @@ if __name__ == "__main__":
     count = len(sys.argv) - 1
     for i in range(0, count):
         sums = int(sys.argv[i + 1]) + sums
-    print(sums)    
+    print(sums)
