@@ -1,5 +1,5 @@
 #!/usr/bin/python3
 
 
-def common_elements(a_dictionary):
+def number_keys(a_dictionary):
     return (len(a_dictionary))
