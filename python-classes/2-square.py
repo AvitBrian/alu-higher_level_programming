@@ -2,6 +2,7 @@
 """ the class square with size and size validation"""
 
 class Square:
+    """ defining the class square. """
 
 
     def __init__(self, size=0):
