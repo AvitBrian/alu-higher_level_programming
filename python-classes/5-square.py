@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-""" the class Square is calculating the area aof a square and displaying it!"""
+
+""" the class Square is calculating the area of a square and displaying it!"""
 
 
 class Square:
@@ -16,7 +17,6 @@ class Square:
 
         return self.__size
 
-
     @size.setter
     def size(self, value):
         """ setting the size of the square"""
@@ -26,7 +26,6 @@ class Square:
         elif value < 0:
             raise ValueError("size must be >= 0")
         self.__size = value
-
 
     def area(self):
         """ Return calculated area of the square. """

@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 """ the class square is calculating the size of an area and displaying it"""
 
 
@@ -10,13 +11,11 @@ class Square:
         self.__size = size
         self.position = position
 
-
     @property
     def position(self):
         """ getting position of the square. """
 
         return self.position
-
 
     @position.setter
     def position(self, value):
@@ -29,12 +28,10 @@ class Square:
             raise TypeError("position must be a tuple of 2 positive integers.")
         self.__position = value
 
-
     @property
     def size(self):
         """ getting the size of the square. """
         return self.__size
-
 
     @size.setter
     def size(self, value):
@@ -44,7 +41,6 @@ class Square:
         elif value < 0:
             raise ValueError("size must be >= 0")
         self.__size = value
-
 
     def area(self):
         """ calculating area of the square. """
