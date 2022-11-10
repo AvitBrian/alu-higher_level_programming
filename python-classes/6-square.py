@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-""" the class square is calculating the size of an area and displaying it"""
+"""Square Class Representation"""
 
 
 class Square:

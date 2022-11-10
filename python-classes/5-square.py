@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""Square Class code"""
+
+"""the class Square displays a square"""
+
 
 class Square:
     """Class definition. """
@@ -8,7 +10,6 @@ class Square:
         """constructor initialization."""
         self.__size = size
 
-    
     @property
     def size(self):
         """getting the size of the square """
@@ -28,8 +29,7 @@ class Square:
     def area(self):
         """Return calculated area of the square. """
 
-        return (self.__size ** 2)
-    
+        return (self.__size ** 2) 
 
     def my_print(self):
         """print the square with the "#" character. """
