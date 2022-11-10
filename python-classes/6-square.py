@@ -1,36 +1,44 @@
 #!/usr/bin/python3
+""" the class square! """
 
 
 class Square:
-
+    """ Class Square definition. """
 
     def __init__(self, size=0, position=(0, 0):
+        """ initializing class constructor. """
         self.__size = size
         self.position = position
 
 
     @property
     def position(self):
+        """ getting position of the square. """
+
         return self.position
-    
+
 
     @position.setter
     def position(self, value):
+        """ setting the position of the square. """
+
         if(not isinstance(value, tuple) or
                 len(value) != 2 or
                 not all(isinstance(_, int) for _ in value) or
                 not all(_ >= 0 for _in value)):
-            raise TypeError("position must be a tuple of 2 positive integers")
+            raise TypeError("position must be a tuple of 2 positive integers.")
         self.__position = value
 
 
     @property
     def size(self):
+        """ getting the size of the square. """
         return self.__size
 
 
     @size.setter
     def size(self, value):
+        """ setting the size of the square. """
         if not value isinstance(value, int):
             raise TypeError("size must be an integer")
         elif value < 0:
@@ -39,10 +47,13 @@ class Square:
 
 
     def area(self):
+        """ calculating area of the square. """
+
         return (self.__size ** 2)
 
 
     def my_print(self):
+        """ printing the square. """
         square_area = area()
         for _ in range(0, square_area):
             [print("#", end="") for _ in range(0, square_area)
