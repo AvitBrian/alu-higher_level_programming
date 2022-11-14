@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-"""working class Square"""
+"""The class square calculating and displaying a square"""
 
 
 class Square:
