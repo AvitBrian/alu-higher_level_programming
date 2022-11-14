@@ -1,11 +1,5 @@
 #!/usr/bin/python3
 
-""" The class square calculating and displaying a square
-    functions: __init__, size, area, print
-    args: size, value
-
-"""
-
 
 class Square:
     """Class definition. """
