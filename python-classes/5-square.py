@@ -7,7 +7,7 @@ class Square:
 
     def __init__(self, size):
         """constructor initialization."""
-        self.__size = size
+        self.size = size
 
     @property
     def size(self):
@@ -28,7 +28,7 @@ class Square:
     def area(self):
         """Return calculated area of the square. """
 
-        return (self.__size * self.__size)
+        return (self.__size ** 2)
 
     def my_print(self):
         s = Square(self.__size)
@@ -37,6 +37,6 @@ class Square:
         for _ in range(0, square_area):
             for _ in range(square_area):
                 print("#", end="")
-            print()
+            print("")
         if square_area == 0:
             print("")
