@@ -5,7 +5,7 @@
 class Square:
     """Class definition. """
 
-    def __init__(self, size, position):
+    def __init__(self, size=0, position=(0, 0)):
         """constructor initialization."""
         self.size = size
         self.position = position
@@ -16,7 +16,7 @@ class Square:
 
         return (self.__size)
     @property
-    def property(self):
+    def position(self):
         """getting the position of the square"""
         return (self.__property)
 
@@ -47,7 +47,7 @@ class Square:
 
     def my_print(self):
         """print the square with the "#" character. """
-        if square_area == 0:
+        if self.__size == 0:
             print("")
             return 
 
