@@ -34,8 +34,8 @@ class Square:
         s = Square(self.size)
         square_area = s.area()
         """print the square with the "#" character. """
-        for _ in range(0, square_area):
-            [print("#", end="") for _ in range(square_area)]
+        for i in range(0, square_area):
+            [print("#", end="") for j in range(square_area)]
             print("")
         if square_area == 0:
             print("")
