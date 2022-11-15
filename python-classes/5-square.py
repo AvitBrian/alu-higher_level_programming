@@ -32,7 +32,8 @@ class Square:
 
     def my_print(self):
         """print the square with the "#" character. """
-        square_area = area()
+        s = Square()
+        square_area = s.area()
         for _ in range(0, square_area):
             [print("#", end="") for _ in range(0, square_area)]
             print()
