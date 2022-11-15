@@ -5,9 +5,9 @@
 class Square:
     """Class definition. """
 
-    def __init__(self, size=0):
+    def __init__(self, size):
         """constructor initialization."""
-        self.__size = size
+        self.size = size
 
     @property
     def size(self):
@@ -31,11 +31,11 @@ class Square:
         return (self.__size ** 2)
 
     def my_print(self):
-        s = Square()
+        s = Square(self.size)
         square_area = s.area()
         """print the square with the "#" character. """
         for _ in range(0, square_area):
-            [print("#", end="") for _ in range(0, square_area)]
-            print()
+            [print("#", end="") for _ in range(square_area)]
+            print("")
         if square_area == 0:
-            print()
+            print("")
