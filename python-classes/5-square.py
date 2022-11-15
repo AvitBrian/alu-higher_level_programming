@@ -7,13 +7,13 @@ class Square:
 
     def __init__(self, size):
         """constructor initialization."""
-        self.size = size
+        self.__size = size
 
     @property
     def size(self):
         """getting the size of the square """
 
-        return self.__size
+        return (self.__size)
 
     @size.setter
     def size(self, value):
@@ -31,11 +31,12 @@ class Square:
         return (self.__size ** 2)
 
     def my_print(self):
-        s = Square(self.size)
+        s = Square(self.__size)
         square_area = s.area()
         """print the square with the "#" character. """
-        for i in range(0, square_area):
-            [print("#", end="") for j in range(square_area)]
-            print("")
+        for _ in range(0, square_area):
+            for _ in range(square_area):
+                print("#", end="")
+            print()
         if square_area == 0:
             print("")
