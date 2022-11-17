@@ -1,6 +1,7 @@
 #!/usr/bin/bash
-a=3
-content=("type" "id" "No" "Yes" "yes" "No" "True" "True" "True" "True" "True" "False" "True" "True")
+a=20
+content=("Yes" "Yes" "No" "Yes" "True" "False" "True" "No" "Yes")
 for i in ${!content[@]};do
-	echo "${content[$i]}">> $i-answer.txt
+	sum=$((a+i))
+	echo "${content[$i]}">> "$sum-answer.txt"
 done
