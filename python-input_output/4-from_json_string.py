@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """returns a string from a json"""
+import json
 
 
 def from_json_string(my_str):
