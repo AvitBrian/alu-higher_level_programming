@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ defines a class student to json"""
-import json
+
 
 class Student:
     """ has student attributes """
