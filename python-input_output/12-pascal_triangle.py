@@ -14,5 +14,5 @@ def pascal_triangle(n):
         for i in range(len(tri) - 1):
             tmp.append(tri[i] + tri[i +1])
         tmp.append(1)
-        triangle.append(tmp)
+        triangles.append(tmp)
     return triangles
