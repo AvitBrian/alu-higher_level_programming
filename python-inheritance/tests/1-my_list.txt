@@ -9,8 +9,7 @@ This module defines a class ``MyList`` that inherits from ``list``.
 Instantiation
 =============
 
-``MyList`` can be instantiated with no arguments, which will return
-an empty list:
+``MyList`` can be instantiated with no arguments, which will return an empty list:
 
 ::
 
@@ -22,10 +21,12 @@ an empty list:
 ::
 
     >>> print(my_list)
-
     []
+
 Or a single argument, which must be an iterable object.
+
 ::
+
     >>> my_list = MyList([1, 2, 3])
     >>> print(my_list)
     [1, 2, 3]
@@ -44,7 +45,6 @@ A ``TypeError`` will be raised for any more than one instantiation arguments.
     TypeError: list() takes at most 1 argument (2 given)
 
 Usage
-
 =====
 
 ``MyList`` is an inherited ``list`` class, and thus features the same methods.
@@ -60,6 +60,7 @@ For instance, elements can be added to a ``MyList`` with the ``append()`` method
     [1, 2, 3]
 
 Replaced with indexing:
+
 ::
 
     >>> my_list[0] = 5
@@ -73,6 +74,7 @@ And removed with the ``remove()`` method.
     >>> my_list.remove(5)
     >>> print(my_list)
     [2, 3]
+
 See the documentation on Python lists for more built-in methods.
 
 ``print_sorted`` Method
@@ -117,7 +119,6 @@ The order of the original list is not altered after a call to the method.
 ::
 
     >>> print(my_list)
-
     [1, 4, 2, 3, 5]
 
 Note that lists of strings are sorted lexographically.
@@ -132,12 +133,16 @@ Note that lists of strings are sorted lexographically.
     >>> my_list.append("Betty")
     >>> print(my_list)
     ['Brennan', 'Poppy', 'School', 'Holberton', 'Betty']
+
 ::
+
     >>> my_list.print_sorted()
     ['Betty', 'Brennan', 'Holberton', 'Poppy', 'School']
 
 Another friendly reminder that the original list is unaltered :)
+
 ::
+
     >>> print(my_list)
     ['Brennan', 'Poppy', 'School', 'Holberton', 'Betty']
 
