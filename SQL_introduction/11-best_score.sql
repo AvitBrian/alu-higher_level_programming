@@ -1,3 +1,3 @@
---lists scores and names
+-- lists scores and names
 SELECT `score`,`name` FROM `second_table`
 ORDER BY `score` DESC;
