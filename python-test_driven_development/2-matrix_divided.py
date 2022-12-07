@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """ divides all elements of a matrix """
 
+
 def matrix_divided(matrix, div):
-    """ 
+    """
         takes in a matrix and divides it.
         raises different errors with regards to the type.
         args: matrix, div
@@ -10,9 +11,9 @@ def matrix_divided(matrix, div):
     if (not isinstance(matrix, list) or matrix == [] or
             not all(isinstance(row, list) for row in matrix) or
             not all((isinstance(_, int) or isinstance(_, float))
-                for _ in [each for each in matrix for each in row])):
+                for _ in [each for each in matrix for each in rows])):
         raise TypeError("Matrix must be a matrix (list of lists) of \
-                integers/floats")
+                    integers/floats")
 
     if not all(len(row) == len(matrix[0]) for row in matrix):
         raise TypeError("Each row of the matrix must have the same size")
