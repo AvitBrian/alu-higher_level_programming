@@ -8,6 +8,7 @@ Pressure.
 Is getting:
 <BLANKLINE>
 Worser T_T?
+<BLANKLINE>
 
 >>> text_indentation(100)
 Traceback (most recent call last):
