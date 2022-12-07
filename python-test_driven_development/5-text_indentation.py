@@ -9,7 +9,7 @@ def text_indentation(text):
         raise TypeError("text must be a string")
 
     chars = 0
-    while chars < len(text) and text[char] == ' ':
+    while chars < len(text) and text[chars] == ' ':
         chars += 1
     while chars < len(text):
         print(text[chars], end="")
