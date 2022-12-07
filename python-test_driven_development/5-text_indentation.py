@@ -2,7 +2,7 @@
 """ creates a text indentation function """
 
 
-def text_identation(text):
+def text_indentation(text):
     """ indents text """
 
     if not isinstance(text, str):
