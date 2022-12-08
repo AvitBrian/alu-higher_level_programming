@@ -64,6 +64,7 @@ class Base:
                 return [cls.create(**dictionary) for dictionary in list_dicts]
         except IOError:
             return []
+
     def save_to_file_csv(cls, list_objs):
         """ save to csv file """
         filename = cls.__name__ + ".csv"
@@ -91,8 +92,8 @@ class Base:
                 else:
                     fieldnames = ["id", "size", "x", "y"]
                 list_dicts = csv.DictReader(csvfile, fieldnames=fieldnames)
-                list_dicts = [dict([key, int(value)] for key, value in dictionary.items())
-                              for dictionary in list_dicts]
-                return [cls.create(**dictionary) for dictionary in list_dicts]
+                list_dicts = [dict([key, int(value)] for key, value in i.items())
+                              for i in list_dicts]
+                return [cls.create(**i) for i in list_dicts]
         except IOError:
             return []
