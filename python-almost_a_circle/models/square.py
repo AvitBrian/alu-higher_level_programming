@@ -24,8 +24,10 @@ class Square(Rectangle):
         """print() and str() representation of a Square."""
         return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y,
                                                  self.width)
+
     def update(self, *args, **kwargs):
         """ updates the square """
+
         if args and len(args) != 0:
             count = 0
             for each in args:
