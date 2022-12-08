@@ -30,7 +30,7 @@ class Rectangle(Base):
     def height(self):
         """get/set height"""
         return self.__height
-    
+
     @height.setter
     def height(self, value):
         if not isinstance(value, int):
@@ -51,7 +51,7 @@ class Rectangle(Base):
         if value <= 0:
             raise ValueError("x must be > 0")
         self.__x = value
-    
+
     @property
     def y(self):
         """ get/set y coordinates """
