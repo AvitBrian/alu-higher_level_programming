@@ -77,9 +77,9 @@ class Base:
                 else:
                     fieldnames = ["id", "size", "x", "y"]
 
-                w = csv.Dictwriter(csvfile, fieldnames=fieldnames)
+                writer = csv.Dictwriter(csvfile, fieldnames=fieldnames)
                 for obj in list_objs:
-                    w.writerow(obj.to_dictionary())
+                    writer.writerow(obj.to_dictionary())
 
     @classmethod
     def load_from_file_csv(cls):
