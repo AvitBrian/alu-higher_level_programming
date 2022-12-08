@@ -24,3 +24,34 @@ class Square(Rectangle):
         """print() and str() representation of a Square."""
         return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y,
                                                  self.width)
+    def update(self, *args, **kwargs):
+        """ updates the square """
+        if args and len(args) != 0:
+            count = 0
+            for each in args:
+                if count == 0:
+                    if each is None:
+                        self.__init__(self.size, self.x, self.y)
+                    else:
+                        self.id = each
+                elif count == 1:
+                    self.size = each
+                elif count == 2:
+                    self.x = each
+                elif count == 3:
+                    self.y = each
+                count += 1
+
+        elif kwargs and len(kwargs) != 0:
+            for key, value in kwargs.items():
+                if key == "id":
+                    if value is None:
+                        self.__init__(self.size, self.x, self.y)
+                    else:
+                        self.id = value
+                elif key == "size":
+                    self.size = value
+                elif key == "x":
+                    self.x = value
+                elif key == "y":
+                    self.y = value
