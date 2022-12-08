@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ the class Base """
 import json
+import csv
 
 
 class Base:
@@ -22,3 +23,13 @@ class Base:
             return "[]"
         new = json.dumps(list_dictionaries)
         return new
+
+    def save_to_file(cls, list_objs):
+        """ saves json to file """
+        filename = cls.__name__ + ".json"
+        with open(filename, "w") as jsonfile:
+            if listobjs is None:
+                jsonfile.write("[]")
+            else:
+                list_dicts = [_.to_dictionary() for _ in list_objs]
+                jsonfile.write(Base.to_json_string(list_dicts))
