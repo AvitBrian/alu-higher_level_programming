@@ -46,7 +46,7 @@ class Base:
     def create(cls, **dictionary):
         """ creates new objects """
         if dictionary and dictionary != {}:
-            if cls.__name__ = "Rectangle":
+            if cls.__name__ == "Rectangle":
                 new = cls(1, 1)
             else:
                 new - cls(1)
