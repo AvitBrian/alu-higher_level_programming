@@ -107,14 +107,15 @@ class Rectangle(Base):
                             self.__init__(self.width, self.height, self.x, self.y)
                         else:
                             self.id = value
-                        elif key == "width":
-                            self.width = value
-                        elif key == "height":
-                            self.height = value
-                        elif key == "x":
-                            self.x = value
-                        elif key == "y":
-                            self.y = value
+
+                    elif key == "width":
+                        self.width = value
+                    elif key == "height":
+                        self.height = value
+                    elif key == "x":
+                        self.x = value
+                    elif key == "y":
+                        self.y = value
 
     def to_dictionary(self):
         """ dictionary representation """
