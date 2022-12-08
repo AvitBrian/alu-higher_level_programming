@@ -24,6 +24,7 @@ class Base:
         new = json.dumps(list_dictionaries)
         return new
 
+    @classmethod
     def save_to_file(cls, list_objs):
         """ saves json to file """
         filename = cls.__name__ + ".json"
