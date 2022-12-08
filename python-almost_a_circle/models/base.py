@@ -29,7 +29,7 @@ class Base:
         """ saves json to file """
         filename = cls.__name__ + ".json"
         with open(filename, "w") as jsonfile:
-            if listobjs is None:
+            if list_objs is None:
                 jsonfile.write("[]")
             else:
                 list_dicts = [i.to_dictionary() for i in list_objs]
