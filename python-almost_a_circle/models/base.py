@@ -31,5 +31,5 @@ class Base:
             if listobjs is None:
                 jsonfile.write("[]")
             else:
-                list_dicts = [_.to_dictionary() for _ in list_objs]
+                list_dicts = [i.to_dictionary() for i in list_objs]
                 jsonfile.write(Base.to_json_string(list_dicts))
