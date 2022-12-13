@@ -811,6 +811,13 @@ class TestRectangle_to_dictionary(unittest.TestCase):
         with self.assertRaises(TypeError):
             r.to_dictionary(1)
 
+    def test_to_json_string(self):
+        """Test the converting of lists to dicts"""
+        self.assertEqual(Base.to_json_string(None), "[]")
+        self.assertEqual(Base.to_json_string([{'id': 12}]), '[{"id": 12}]')
+        self.assertEqual(type(Base.to_json_string([{'id': 12}])), str)
+        self.assertEqual(Base.to_json_string([]), "[]")
+
     def test_from_json_string(self):
         """Test """
         self.assertEqual(Base.from_json_string(None), [])
