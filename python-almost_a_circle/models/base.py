@@ -64,6 +64,7 @@ class Base:
                 return [cls.create(**dictionary) for dictionary in list_dicts]
         except IOError:
             return []
+
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """ save to csv file """
