@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """ Unittests for models/square.py."""
+import os
 import io
 import sys
 import unittest
