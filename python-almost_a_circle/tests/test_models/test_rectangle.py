@@ -812,5 +812,73 @@ class TestRectangle_to_dictionary(unittest.TestCase):
         with self.assertRaises(TypeError):
             r.to_dictionary(1)
 
+    def test_save_to_file(self):
+        """Test for the save to save to file"""
+        Base._Base__nb_objects = 0
+
+        Rectangle.save_to_file(None)
+        self.assertTrue(os.path.isfile("Rectangle.json"))
+        with open("Rectangle.json") as file:
+            self.assertEqual(file.read(), '[]')
+
+        Rectangle.save_to_file([])
+        with open("Rectangle.json") as file:
+            self.assertEqual(file.read(), '[]')
+            self.assertEqual(type(file.read()), str)
+
+        Rectangle.save_to_file([Rectangle(1, 2)])
+        with open("Rectangle.json") as file:
+            self.assertEqual(file.read(),
+                             '[{"id": 1, "width": 1, '
+                             '"height": 2, "x": 0, "y": 0}]')
+
+    def test_save_to_file_empty(self):
+        """Test for the saving to a an empty file"""
+        Rectangle.save_to_file([])
+        self.assertTrue(os.path.isfile("Rectangle.json"))
+        with open("Rectangle.json") as file:
+            self.assertEqual(file.read(), "[]")
+            self.assertEqual(type(file.read()), str)
+
+    def test_load_from_file(self):
+        """test geting a file form file"""
+        if os.path.exists("Rectangle.json"):
+            os.remove("Rectangle.json")
+
+        self.assertEqual(Rectangle.load_from_file(), [])
+        Rectangle.save_to_file([Rectangle(1, 2)])
+        from_file = Rectangle.load_from_file()
+        self.assertEqual(type(from_file), list)
+        self.assertEqual(from_file[0].width, 1)
+        self.assertEqual(from_file[0].height, 2)
+
+    def test_create(self):
+        """creating a new rectangle"""
+
+        r1 = Rectangle.create(**{'id': 50})
+        self.assertEqual(r1.id, 50)
+
+        r1 = Rectangle.create(**{'id': 50, 'width': 1})
+        self.assertEqual(r1.id, 50)
+        self.assertEqual(r1.width, 1)
+
+        r1 = Rectangle.create(**{'id': 50, 'width': 1, 'height': 2})
+        self.assertEqual(r1.id, 50)
+        self.assertEqual(r1.width, 1)
+        self.assertEqual(r1.height, 2)
+
+        r1 = Rectangle.create(**{'id': 50, 'width': 1, 'height': 2, 'x': 3})
+        self.assertEqual(r1.id, 50)
+        self.assertEqual(r1.width, 1)
+        self.assertEqual(r1.height, 2)
+        self.assertEqual(r1.x, 3)
+
+        r1 = Rectangle.create(**{'id': 50, 'width': 1,
+                                 'height': 2, 'x': 3, 'y': 4})
+        self.assertEqual(r1.id, 50)
+        self.assertEqual(r1.width, 1)
+        self.assertEqual(r1.height, 2)
+        self.assertEqual(r1.x, 3)
+        self.assertEqual(r1.y, 4)
 if __name__ == "__main__":
     unittest.main()

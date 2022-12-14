@@ -643,9 +643,7 @@ class TestSquare_update_kwargs(unittest.TestCase):
 
 
 class TestSquare_to_dictionary(unittest.TestCase):
-    """
-        Tests for testing to_dictionary method of the Square class.
-    """
+    """ Tests for testing to_dictionary method of the Square class. """
 
     def test_to_dictionary_output(self):
         s = Square(10, 2, 1, 1)
@@ -662,6 +660,71 @@ class TestSquare_to_dictionary(unittest.TestCase):
         s = Square(10, 10, 10, 10)
         with self.assertRaises(TypeError):
             s.to_dictionary(1)
+
+    def test_create(self):
+        """Test the functions in square"""
+        s1 = Square.create(**{'id': 89})
+        self.assertEqual(s1.id, 89)
+
+        s1 = Square.create(**{'id': 89, 'size': 1})
+        self.assertEqual(s1.id, 89)
+        self.assertEqual(s1.size, 1)
+
+        s1 = Square.create(**{'id': 89, 'size': 1, 'x': 2})
+        self.assertEqual(s1.id, 89)
+        self.assertEqual(s1.size, 1)
+        self.assertEqual(s1.x, 2)
+
+        s1 = Square.create(**{'id': 89, 'size': 1,
+                              'x': 2, 'y': 3})
+        self.assertEqual(s1.id, 89)
+        self.assertEqual(s1.size, 1)
+        self.assertEqual(s1.x, 2)
+        self.assertEqual(s1.y, 3)
+
+        s1 = Square.create(**{'id': 89, 'size': 1,
+                              'x': 2, 'y': 3})
+        self.assertEqual(s1.id, 89)
+        self.assertEqual(s1.size, 1)
+        self.assertEqual(s1.x, 2)
+        self.assertEqual(s1.y, 3)
+
+    def test_save_to_file(self):
+        """Test the functions in square"""
+        Base._Base__nb_objects = 0
+
+        Square.save_to_file(None)
+        self.assertTrue(os.path.isfile("Square.json"))
+        with open("Square.json") as file:
+            self.assertEqual(file.read(), '[]')
+
+        Square.save_to_file([])
+        with open("Square.json") as file:
+            self.assertEqual(file.read(), '[]')
+            self.assertEqual(type(file.read()), str)
+
+        Square.save_to_file([Square(1)])
+        with open("Square.json") as file:
+            self.assertEqual(file.read(),
+                             '[{"id": 1, "size": 1, "x": 0, "y": 0}]')
+
+    def test_save_to_file_empty(self):
+        Square.save_to_file([])
+        self.assertTrue(os.path.isfile("Square.json"))
+        with open("Square.json") as file:
+            self.assertEqual(file.read(), "[]")
+            self.assertEqual(type(file.read()), str)
+
+    def test_load_from_file(self):
+        """Test the functions in square"""
+        if os.path.exists("Square.json"):
+            os.remove("Square.json")
+
+        self.assertEqual(Square.load_from_file(), [])
+        Square.save_to_file([Square(2)])
+        from_file = Square.load_from_file()
+        self.assertEqual(type(from_file), list)
+        self.assertEqual(from_file[0].size, 2)
 
 if __name__ == "__main__":
     unittest.main()
