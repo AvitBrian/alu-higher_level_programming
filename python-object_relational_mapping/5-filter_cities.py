@@ -19,6 +19,5 @@ if __name__ == "__main__":
                 """
         cur.execute(query.format(sys.argv[4]))
         cities = cur.fetchall()
-        for city in cities:
-            print(city)
+        print(", ".join([city[0] for city in cities]))
         cur.close()
