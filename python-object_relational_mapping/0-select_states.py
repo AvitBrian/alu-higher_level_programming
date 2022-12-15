@@ -4,6 +4,7 @@ import sys
 from MySQLdb
 
 if __name__ == "__main__":
+    """ setting the file as a script"""
     with MySQLdb.connect(
         user=sys.argv[1],
         passwd=sys.argv[2],
