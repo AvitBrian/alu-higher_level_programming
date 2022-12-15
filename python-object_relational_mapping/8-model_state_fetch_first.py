@@ -21,7 +21,7 @@ if __name__ == "__main__":
     row = session.query(State).first()
 
     if row:
-        print("{}: {}".format(row.id, row.dict[name]))
+        print("{}: {}".format(row.id, row.name))
     else:
         print("Nothing")
     session.close()
