@@ -12,8 +12,9 @@ if __name__ == "__main__":
             port=3306,
     )as conn:
         cur = conn.cursor()
-        query = """ SELECT c.name
-                    FROM states as s, cities as c
+        query = """ SELECT cities.name
+                    FROM states 
+                    INNER JOIN cities ON states.id = cities.state_id
                     WHERE s.name = '{:s}'
                     ORDER BY c.id ASC
                 """
