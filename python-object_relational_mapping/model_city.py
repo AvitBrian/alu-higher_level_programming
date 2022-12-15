@@ -6,6 +6,7 @@ from sqlalchemy import Integer, String, ForeignKey
 
 Base = declarative_base()
 
+
 class City(Base):
     """ defining the class here """
     __tablename__ = 'cities'
