@@ -11,11 +11,8 @@ if __name__ == "__main__":
                            .format(sys.argv[1], sys.argv[2], sys.argv[3]),
                            pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
-    session = Session()
     Base.metadata.create_all(engine)
-
-    state = session.query(State).filter(state.id == 2).first()
-    state.name = "New Mexico"
-
-    session.commit()
-    session.close()
+    with session() as sesssion:
+        state = session.query(State).filter(State.id=2).all()
+        state.name = "New Mexico"
+        session.commit()
