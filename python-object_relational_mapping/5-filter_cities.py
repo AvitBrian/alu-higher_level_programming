@@ -17,7 +17,7 @@ if __name__ == "__main__":
                     WHERE s.name = '{:.d}'
                     ORDER BY c.id ASC
                 """
-        cur.execute(query.format(sys.argv[4])
+        cur.execute(query.format(sys.argv[4]))
         cities = cur.fetchall()
         for city in cities:
             print(city)
