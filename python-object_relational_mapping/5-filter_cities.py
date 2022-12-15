@@ -13,7 +13,7 @@ if __name__ == "__main__":
     )as conn:
         cur = conn.cursor()
         query = """ SELECT cities.name
-                    FROM states 
+                    FROM states
                     INNER JOIN cities ON states.id = cities.state_id
                     WHERE states.name = '{:s}'
                     ORDER BY cities.id ASC
