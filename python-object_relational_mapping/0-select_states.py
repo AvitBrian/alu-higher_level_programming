@@ -12,7 +12,7 @@ if __name__ == "__main__":
         host='localhost',
         port=3306
         ) as s:
-        cur = w.cursor()
+        cur = s.cursor()
         cur.execute(
                 "SELECT * FROM states" 
                 "ORDER BY id ASC"
