@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-""" updates the database """
+"""updates the database"""
+
+import sys
 from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
-import sys
 
 
 if __name__ == "__main__":
