@@ -17,4 +17,7 @@ if __name__ == "__main__":
                 WHERE name LIKE BINARY 'N%' \
                 ORDER BY id ASC"
             )
+        all_states = cur.fetchall()
+        for each_state in all_state:
+            print(each_state)
         cur.close()
