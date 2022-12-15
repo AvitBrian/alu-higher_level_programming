@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" updates the dataabase"""
+""" updates the database """
 from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
@@ -15,8 +15,8 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
 
     state = session.query(State).filter(State.id == 2).first()
-    
+
     state.name = "New Mexico"
-    
+
     session.commit()
     session.close()
