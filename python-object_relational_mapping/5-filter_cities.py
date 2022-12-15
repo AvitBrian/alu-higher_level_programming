@@ -16,7 +16,7 @@ if __name__ == "__main__":
                     FROM states 
                     INNER JOIN cities ON states.id = cities.state_id
                     WHERE states.name = '{:s}'
-                    ORDER BY c.id ASC
+                    ORDER BY cities.id ASC
                 """
         cur.execute(query.format(sys.argv[4]))
         cities = cur.fetchall()
