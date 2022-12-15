@@ -14,8 +14,7 @@ if __name__ == "__main__":
         ) as s:
         cur = s.cursor()
         cur.execute(
-                "SELECT * FROM states" 
-                "ORDER BY id ASC;"
+                "SELECT * FROM states ORDER BY id ASC"
             )
         all_states = cur.fetchall()
         for each_state in all_states:
