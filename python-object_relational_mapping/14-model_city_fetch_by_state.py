@@ -6,6 +6,7 @@ from model_city import City
 from model_state import State, Base
 import sys
 
+
 if __name__ == "__main__":
     user, passwd, db = sys.argv[1], sys.argv[2], sys.argv[3]
     engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}"
@@ -19,8 +20,6 @@ if __name__ == "__main__":
 
         for row in result:
             print("{}: ({}) {}".format(
-                state[0].name,
-                state[1].id,
-                state[1].name))
-
-
+                state[0].__dict__['name'],
+                state[1].__dict__['id'],
+                state[1].__dict__['name']))
