@@ -14,6 +14,6 @@ if __name__ == "__main__":
         cur = conn.cursor()
         cur.execute(
                 "SELECT * FROM states"
-                "WHERE name="N%" ORDER BY id"
+                "WHERE name LIKE 'N%' ORDER BY id"
             )
         cur.close()
