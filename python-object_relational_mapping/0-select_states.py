@@ -11,12 +11,13 @@ if __name__ == "__main__":
         db=sys.argv[3],
         host='localhost',
         port=3306
-        ) as s:
-        cur = s.cursor()
-        cur.execute(
-                "SELECT * FROM states ORDER BY id ASC"
-            )
-        all_states = cur.fetchall()
-        for each_state in all_states:
-            print(state)
-        cur.close()
+    )
+        as s:
+            cur = s.cursor()
+            cur.execute(
+                    "SELECT * FROM states ORDER BY id ASC"
+                )
+            all_states = cur.fetchall()
+            for each_state in all_states:
+                print(each_state)
+            cur.close()
