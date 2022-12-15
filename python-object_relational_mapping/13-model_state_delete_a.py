@@ -21,4 +21,5 @@ if __name__ == "__main__":
         session.delete(row)
 
     session.commit()
+
     session.close()
