@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""updates the database"""
-
+"""updates the database with new state"""
 import sys
 from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
