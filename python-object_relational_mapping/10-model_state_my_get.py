@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+""" list state object from input"""
 import sys
 from model_state import Base, State
 from sqlalchemy.orm import Session
