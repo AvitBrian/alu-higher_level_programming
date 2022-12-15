@@ -14,7 +14,7 @@ if __name__ == "__main__":
         cur = conn.cursor()
         query = """ SELECT c.name
                     FROM states as s, cities as c
-                    WHERE s.name = '{:.d}'
+                    WHERE s.name = '{:d}'
                     ORDER BY c.id ASC
                 """
         cur.execute(query.format(sys.argv[4]))
