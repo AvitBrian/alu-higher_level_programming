@@ -15,7 +15,7 @@ if __name__ == "__main__":
         query = """ SELECT cities.name
                     FROM states 
                     INNER JOIN cities ON states.id = cities.state_id
-                    WHERE state.name = '{:s}'
+                    WHERE states.name = '{:s}'
                     ORDER BY c.id ASC
                 """
         cur.execute(query.format(sys.argv[4]))
