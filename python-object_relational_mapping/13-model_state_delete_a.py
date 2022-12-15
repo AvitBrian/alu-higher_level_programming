@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """deletes data from database"""
-
 import sys
 from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
@@ -15,10 +14,10 @@ if __name__ == "__main__":
     session = Session()
     Base.metadata.create_all(engine)
 
-    data = session.query(State).filter(State.name.contains('a')).all()
+    states = session.query(State).filter(State.name.contains('a')).all()
 
-    for row in data:
-        session.delete(row)
+    for state in states:
+        session.delete(state)
 
     session.commit()
 
