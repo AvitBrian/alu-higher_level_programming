@@ -18,6 +18,6 @@ if __name__ == "__main__":
                 ORDER BY id ASC"
             )
         all_states = cur.fetchall()
-        for each_state in all_state:
+        for each_state in all_states:
             print(each_state)
         cur.close()
