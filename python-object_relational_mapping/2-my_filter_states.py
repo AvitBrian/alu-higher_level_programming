@@ -14,7 +14,7 @@ if __name__ == "__main__":
         cur = engine.cursor()
         cur.execute(
                 "SELECT * FROM states \
-                 WHERE name='{}'".format(sys.argv[4]))
+                 WHERE name LIKE BINARY'{}'".format(sys.argv[4]))
         all_states = cur.fetchall()
         for each in all_states:
             print(each)
