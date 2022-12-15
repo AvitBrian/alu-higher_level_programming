@@ -1,5 +1,3 @@
-#!/usr/bin/python3
-""" lists State object from the database from input"""
 import sys
 from model_state import Base, State
 from sqlalchemy.orm import Session
@@ -20,8 +18,5 @@ if __name__ == "__main__":
     session = Session(engine)
     state_name = sys.argv[4]
     state = session.query(State).filter(State.name == state_name).first()
-    if state is None:
-        print("Not found")
-    else:
-        print(f'{state.id}')
+    print("Not Found ")if state is None else print(f'state.id')
     session.close()
