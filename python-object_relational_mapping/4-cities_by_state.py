@@ -15,7 +15,7 @@ if __name__ == "__main__":
         query = """ SELECT c.id, c.name, s.name
                     FROM states as s, cities as c
                     WHERE c.state_id = s.id
-                    ORDER BY states.id ASC
+                    ORDER BY c.id ASC
                 """
         cur.execute(query)
         cities = cur.fetchall()
