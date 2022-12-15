@@ -11,12 +11,12 @@ if __name__ == "__main__":
                         sys.argv[1], sys.argv[2], sys.argv[3]),
                         pool_pre_ping=True
                     )
-    
+ 
     Base.metadata.create_all(engine)
-    
+
     session = Session(engine)
     get_state = sys.argv[4]
-    got_id = session.query(State).filter(State.name == get_state).all()
+    got_id = session.query(State).filter(State.name == get_state).first()
 
     print("{}".format(state.id)) if got_id else print("Not found")
 
