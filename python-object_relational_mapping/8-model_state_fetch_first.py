@@ -16,12 +16,12 @@ if __name__ == "__main__":
 
     Base.metadata.create_all(engine)
 
-    session = Session()
+    session = Session(engine)
 
-    first = session.query(State).first()
+    row = session.query(State).first()
 
-    if first:
-        print("{}: {}".format(first.__dict__[id], first.__dict__[name]))
+    if row:
+        print("{}: {}".format(row.id, row.dict[name]))
     else:
         print("Nothing")
     session.close()
