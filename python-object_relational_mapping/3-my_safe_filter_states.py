@@ -14,7 +14,7 @@ if __name__ == "__main__":
         cur = conn.cursor()
         query = """ SELECT * FROM states
                     WHERE name = %s
-                    ORDER BY id ASC 
+                    ORDER BY id ASC
                 """
         cur.execute(query, (sys.argv[4],))
         names = cur.fetchall()
