@@ -20,6 +20,6 @@ if __name__ == "__main__":
         .filter(State.id == City.state_id).order_by(City.id).all()
     print(result)
     for r in result:
-        print(f"{}: ({}) {}")
+        print(f"{r[0].name}: ({r[1].id}) {r[1].name}")
 
     session.close()
