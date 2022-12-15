@@ -14,12 +14,12 @@ if __name__ == "__main__":
                            pool_pre_ping=True)
     Base.metadata.create_all(engine)
 
-    session = Session(engine)
-    result = session.query(State, City) \
-        .filter(State.id == City.state_id).order_by(City.id).all()
-    for row in result:
-        print("{}: ({}) {}".format(
-            state[0].__dict__['name'],
-            state[1].__dict__['id'],
-            state[1].__dict__['name']))
-    session.close()
+    with Session(engine) as session:
+        result = session.query(State, City) \
+            .filter(State.id == City.state_id).order_by(City.id).all()
+
+        for row in result:
+            print("{}: ({}) {}".format(
+                row[0].__dict__['name'],
+                row[1].__dict__['id'],
+                row[1].__dict__['name']))
