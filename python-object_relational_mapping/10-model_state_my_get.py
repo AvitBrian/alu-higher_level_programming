@@ -16,7 +16,12 @@ if __name__ == "__main__":
     session = Session(engine)
     get_state = sys.argv[4]
     got_id = session.query(State).filter(State.name == get_state).first()
-
-    print("{}".format(state.id)) if got_id else print("Not found")
-
+    Base.metadata.create_all(engine)
+    session = Session(engine)
+    state_name = sys.argv[4]
+    state = session.query(State).filter(State.name == state_name).first()
+    if state is None:
+        print("Not found")
+    else:
+        print(f'{state.id}')
     session.close()
