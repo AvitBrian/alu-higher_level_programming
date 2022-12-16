@@ -1,3 +1,3 @@
 test_driven_development 😒 I hate these ones...
 # Background Context:
-just doing a bunch of stuff and the making gazzilions of tests for nothing! mtche.
+just doing a bunch of stuff and then making gazzilions of tests for nothing! mtche.
