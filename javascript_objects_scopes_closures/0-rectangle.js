@@ -1,4 +1,6 @@
 #!/usr/bin/node
-export default class Rectangle {
+class Rectangle {
 
 }
+
+exports.Rectangle = Rectangle;
