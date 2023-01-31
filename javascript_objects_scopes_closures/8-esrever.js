@@ -1,5 +1,5 @@
 #!/usr/bin/node
-const eserver = (list) => {
+const esrever = (list) => {
   const newList = [];
   for (let m = list.length - 1; m >= 0; m--) {
     newList.push(list[m]);
@@ -7,4 +7,4 @@ const eserver = (list) => {
   return newList;
 };
 
-exports.eserver = eserver;
+exports.esrever = esrever;
