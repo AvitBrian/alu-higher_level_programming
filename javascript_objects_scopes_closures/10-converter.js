@@ -1,4 +1,6 @@
 #!/usr/bin/node
-exports.converter = function (base) {
+const converter = function (base) {
   return (number) => number.toString(base);
 };
+
+exports.converter = converter;
