@@ -1,5 +1,5 @@
 #!/usr/bin/node
-import { request } from 'request';
+const request = require('request');
 const url = process.argv[2];
 
 request(url, (err, res) => {
