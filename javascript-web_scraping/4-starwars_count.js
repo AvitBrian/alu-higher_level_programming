@@ -8,7 +8,6 @@ request(url, function (err, response, body) {
   } else {
     let count = 0;
     const file = JSON.parse(body).results;
-    console.log(file);
     for (const data in file) {
       const charlist = file[data].characters;
       for (const each in charlist) {
